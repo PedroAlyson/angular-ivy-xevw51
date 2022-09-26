@@ -15,5 +15,5 @@
 <select [(ngModel)]="outro">
   <option value="{{ reg.id }}" *ngFor="let reg of name">{{ reg.name }}</option>
 </select>
-<div *ngIf="nada === outro; else bug">iguais</div>
-<ng-template #Nada> não sao iguais </ng-template>
+<div *ngIf="nada === outro; else coisado">Iguais</div>
+<ng-template #coisado> não são iguais </ng-template>
