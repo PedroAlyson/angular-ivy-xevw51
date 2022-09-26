@@ -1,19 +1,31 @@
-<div>
-  <!-- <table border="1">
-    <tr *ngFor="">
-      <td>
-        {{ reg.name }}
-      </td>
-    </tr>
-    <tr *ngIf="name.length === 0">Sem nenhum registro</tr>
-
-  </table> -->
+<div *ngFor="let el of number; index as n">
+  <table border="1">
+    <thead>
+      <tr>
+        <td>id</td>
+        <td>nome</td>
+      </tr>
+    </thead>
+    <tbody *ngFor="let reg of name; index as i">
+        <tr *ngIf="reg.id === el.number ; else undefined">
+          <td>
+            {{ reg.id }}
+          </td>
+          <td>
+            {{ reg.name }}
+          </td>
+        </tr>
+        <ng-template>  </ng-template>
+    </tbody>
+  </table>
 </div>
-<select [(ngModel)]="nada">
+<!-- <select [(ngModel)]="nada">
   <option value="{{ reg.id }}" *ngFor="let reg of name">{{ reg.name }}</option>
 </select>
 <select [(ngModel)]="outro">
   <option value="{{ reg.id }}" *ngFor="let reg of name">{{ reg.name }}</option>
 </select>
-<div *ngIf="nada === outro; else coisado">Iguais</div>
-<ng-template #coisado> não são iguais </ng-template>
+<div *ngIf="nada == outro; else coisado">Iguais</div>
+<ng-template #coisado> não são iguais </ng-template> -->
+
+
