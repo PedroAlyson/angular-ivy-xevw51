@@ -1,4 +1,19 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div>
+  <!-- <table border="1">
+    <tr *ngFor="">
+      <td>
+        {{ reg.name }}
+      </td>
+    </tr>
+    <tr *ngIf="name.length === 0">Sem nenhum registro</tr>
+
+  </table> -->
+</div>
+<select [(ngModel)]="nada">
+  <option value="{{ reg.id }}" *ngFor="let reg of name">{{ reg.name }}</option>
+</select>
+<select [(ngModel)]="outro">
+  <option value="{{ reg.id }}" *ngFor="let reg of name">{{ reg.name }}</option>
+</select>
+<div *ngIf="nada === outro; else bug">iguais</div>
+<ng-template #Nada> não sao iguais </ng-template>
